@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='../static/js/InformationBoxes.js')}}"></script> -->
+    <!-- <script type="text/javascript" src="../static/js/InformationBoxes.js"> -->
+    <script type="text/javascript">
+        var data = '{{coordinates|tojson}}'
+        data = JSON.parse(data)
+        console.log(data)
+
+        var numKiosks = '{{kiosks|tojson}}'
+        numKiosks = JSON.parse(numKiosks)
+        console.log(numKiosks)
+
+
+        function refresher(){
+            location.reload()
+        }
+        
+        function showInfoBoxes(clicked_id) {
+
+            // first wipe out all existing boxes if new one is clicked, that way a new box can be created on top of it
+            var myobj = document.getElementById("p1");
+            if (myobj != null){
+                myobj.remove();
+            }
+            myobj = document.getElementById("p2");
+            if (myobj != null){
+                myobj.remove();
+            }
+            myobj = document.getElementById("p3");
+            if (myobj != null){
+                myobj.remove();
+            }
+            myobj = document.getElementById("p4");
+            if (myobj != null){
+                myobj.remove();
+            }
+
+        
+            var p1 = document.createElement('p')
+            p1.classList.add("transBox")
+            p1.setAttribute("id", "p1")
+            p1.type = "p"
+            tempStr = "<b>Status for Kiosk " + clicked_id + "</b><br />"
+            for(i = 0; i < data[clicked_id]["Reasons"]["Status"].length; i++){
+                tempStr += "<br />" + data[clicked_id]["Reasons"]["Status"][i]
+            }
+            tempStr += "<br />" + "<a href='/more_info/" + clicked_id + "'>More Kiosk Information</a>"
+            p1.innerHTML = tempStr
+            //p1.innerHTML = "Status for kiosk " + clicked_id + "<br />" + data[clicked_id]["Reasons"]["Status"]
+            
+            p1.style.position = "absolute";
+            p1.style.backgroundColor = "gray"
+            p1.style.color = "white"
+            p1.style.fontSize = "16px"
+            p1.style.width =  250 + "px"
+            p1.style.height = 130 + "px"
+            p1.style.top = 45 + "px"
+            p1.style.left = 125 + "px"
+            p1.style.opacity = .75
+            var container = document.getElementById('vidDisplay')
+            container.appendChild(p1)
+        
+            var p2 = document.createElement('p')
+            p2.classList.add("transBox")
+            p2.setAttribute("id", "p2")
+            p2.type = "p"
+            tempStr = "<b>Usage for Kiosk " + clicked_id + "</b><br />"
+            for(i = 0; i < data[clicked_id]["Reasons"]["Usage"].length; i++){
+                tempStr += "<br />" + data[clicked_id]["Reasons"]["Usage"][i]
+            }
+            p2.innerHTML = tempStr
+            //p2.innerHTML = "Usage for kiosk " + clicked_id + "<br />" + data[clicked_id]["Reasons"]["Usage"]
+            p2.style.position = "absolute";
+            p2.style.backgroundColor = "gray"
+            p2.style.color = "white"
+            p2.style.fontSize = "16px"
+            p2.style.width =  250 + "px"
+            p2.style.height = 130 + "px"
+            p2.style.top = 45 + "px"
+            p2.style.left = 425 + "px"
+            p2.style.opacity = .75
+            var container = document.getElementById('vidDisplay')
+            container.appendChild(p2)
+        
+            var p3 = document.createElement('p')
+            p3.classList.add("transBox")
+            p3.setAttribute("id", "p3")
+            p3.type = "p"
+            tempStr = "<b>Overrides for Kiosk " + clicked_id + "</b><br />"
+            for(i = 0; i < data[clicked_id]["Reasons"]["Overrides"].length; i++){
+                tempStr += "<br />" + data[clicked_id]["Reasons"]["Overrides"][i]
+            }
+            p3.innerHTML = tempStr
+            //p3.innerHTML = "Overrides for kiosk " + clicked_id + "<br />" + data[clicked_id]["Reasons"]["Overrides"]
+            p3.style.position = "absolute";
+            p3.style.backgroundColor = "gray"
+            p3.style.color = "white"
+            p3.style.fontSize = "16px"
+            p3.style.width =  250 + "px"
+            p3.style.height = 130 + "px"
+            p3.style.top = 45 + "px"
+            p3.style.left = 725 + "px"
+            p3.style.opacity = .75
+            var container = document.getElementById('vidDisplay')
+            container.appendChild(p3)
+        
+            var p4 = document.createElement('p')
+            p4.classList.add("transBox")
+            p4.setAttribute("id", "p4")
+            p4.type = "p"
+            tempStr = "<b>Transactions for Kiosk " + clicked_id + "</b><br />"
+            for(i = 0; i < data[clicked_id]["Reasons"]["Transactions"].length; i++){
+                tempStr += "<br />" + data[clicked_id]["Reasons"]["Transactions"][i]
+            }
+            p4.innerHTML = tempStr
+            //p4.innerHTML = "Transactions for kiosk " + clicked_id + "<br />" + data[clicked_id]["Reasons"]["Transactions"]
+            p4.style.position = "absolute";
+            p4.style.backgroundColor = "gray"
+            p4.style.color = "white"
+            p4.style.fontSize = "16px"
+            p4.style.width =  250 + "px"
+            p4.style.height = 130 + "px"
+            p4.style.top = 45 + "px"
+            p4.style.left = 1025 + "px"
+            p4.style.opacity = .75
+            var container = document.getElementById('vidDisplay')
+            container.appendChild(p4)
+        
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            //numKiosks = 3
+            //numKiosks = 5
+            for(i = 1; i < numKiosks + 1; i++){
+        
+                // create info button (above the regular boxes)
+                infoButton = document.createElement('button')
+                infoButton.setAttribute("id", i)
+                infoButton.classList.add("circle")
+                infoButton.type='button'
+                // edit some of infoButton
+                infoButton.style.position = "absolute";
+                infoButton.style.backgroundColor = data[i]['colorCode']
+                infoButton.style.color = "white"
+                infoButton.style.fontSize = "30px"
+                infoButton.style.width = 50 + "px"
+                infoButton.style.height = 50 + "px"
+                //infoButton.style.top = parseInt(data[i]['top']) - 100 + "px"
+                console.log("LEFTLEFTLEFTLEFT")
+                console.log(parseInt(data[i]['left']))
+
+                console.log("WIDTH")
+                console.log(parseInt(data[i]['width']))
+
+                console.log(window.screen.height);
+                console.log(window.screen.width)
+                //python img size is W: 1280, H: 720
+                //js screen size is W: 1440, H: 900 (Mac)
+                //1280/1440 = .8889
+                //1 - .886 = .111
+                //.114 * (Left) = X
+                //Left + X = right spot on image
+                //so .111 isnt the magic number so i just made it .125, so that is the best number in this scenario to 
+                //move the info button to the right spot on top of the bounding box
+                //also adding 25 to get it to the center of the bounding box
+                infoButton.style.top = parseInt(data[i]['top']) + (.2 * parseInt(data[i]['top'])) - 100 + "px"
+                //infoButton.style.left = parseInt(data[i]['left']) + 200 + "px"
+                infoButton.style.left = parseInt(data[i]['left']) + (.125 * parseInt(data[i]['left'])) + 25 + "px"
+                //infoButton.style.left = parseInt(data[i]['left']) + parseInt(data[i]['width']) + "px"
+                infoButton.innerHTML = "Info"
+        
+                // displaying additional information about data
+                infoButton.onclick = function () {
+                    clicked_id = this.id
+                    var but = document.getElementById(clicked_id)
+                    if (Object.keys(data[clicked_id]['Reasons']).length > 0) {
+                        // but.innerHTML = data[i-1]['Reasons']['1']
+                        // but.innerHTML = "More data from backend"
+                        // hide info boxes for clickedid
+        
+                        showInfoBoxes(clicked_id)
+                        // should instead do non visible to visible?
+                    } else { 
+                        but.innerHTML = "Functional"
+                    }
+                }
+                
+                
+                var container = document.getElementById('vidDisplay')
+                // container.appendChild(button)
+                container.appendChild(infoButton)
+            }
+        })
+    </script>
+    <title>Live Streaming Demonstration</title>
+    
+</head>
+<body>
+<!-- <div class="container"> -->
+    <!-- <h3 class="mt-5">Live Streaming</h3> -->
+    <!-- <form method="POST">
+        <input type="text" name="text" id="">
+        <input type="submit">
+    </form> -->
+    <div class="container" id="vidDisplay">
+        <img src="{{ url_for('video_feed') }}" width="100%">
+    </div>
+
+    <button id="refresherButton" onclick="refresher()">Restart</button>
+    
+    
+<!-- <script src="../static/js/InformationBoxes.js"></script> -->
+
+</body>
+
+</html>

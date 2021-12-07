@@ -1,0 +1,57 @@
+{
+    "1": {
+        "status": "Functional",
+        "color": "Green",
+        "colorCode": "#00FF00",
+        "Reasons": {
+            "Status": ["Functional"],
+            "Usage": ["Single Pax: 2,000", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
+            "Overrides": ["Baggage Fee: 50", "Baggage exception: 318", "Self Tag: 520", "Total overrides: 11,798"],
+            "Transactions": ["Number of Transactions: 9,357", "Total baggage Revenue: $41,000", "Already checked-in Revenue : $53,000"]
+        }
+    },
+    "2": {
+        "status": "Possibly Functional",
+        "color": "Yellow",
+        "colorCode": "#FFFF00",
+        "Reasons": {
+            "Status": ["Possibly Functional"],
+            "Usage": ["Multi-Pax: 795", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
+            "Overrides": ["Baggage Fee: 50", "Self Tag: 520", "Baggage exception: 318", "Total overrides: 11,798"],
+            "Transactions": ["Total baggage Revenue: $41,000", "Number of Transactions: 9,357", "Already checked-in Revenue : $53,000"]
+        }
+    },
+    "3": {
+        "status": "Non-Functional",
+        "color": "Red",
+        "colorCode": "#FF0000",
+        "Reasons": {
+            "Status": ["Non-Functional"],
+            "Usage": ["Single Pax: 2,000", "Multi-Pax: 795", "Passengers Total: 3765"],
+            "Overrides": ["Baggage Fee: 50", "Self Tag: 520", "Baggage exception: 318", "Total overrides: 11,798"],
+            "Transactions": ["Number of Transactions: 9,357", "Total baggage Revenue: $41,000", "Already checked-in Revenue : $53,000"]
+        }
+    },
+    "4": {
+        "status": "Functional",
+        "color": "Green",
+        "colorCode": "#00FF00",
+        "Reasons": {
+            "Status": ["Functional"],
+            "Usage": ["Single Pax: 2,000", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
+            "Overrides": ["Baggage exception: 318", "Baggage Fee: 50", "Self Tag: 520", "Total overrides: 11,798"],
+            "Transactions": ["Already checked-in Revenue : $53,000", "Number of Transactions: 9,357", "Total baggage Revenue: $41,000"]
+        }
+    },
+    "5": {
+        "status": "Possibly Functional",
+        "color": "Yellow",
+        "colorCode": "#FFFF00",
+        "Reasons": {
+            "Status": ["Possibly Functional"],
+            "Usage": ["Multi-Pax: 795", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
+            "Overrides": ["Baggage Fee: 50", "Baggage exception: 318", "Self Tag: 520", "Total overrides: 11,798"],
+            "Transactions": ["Number of Transactions: 9,357", "Total baggage Revenue: $41,000", "Already checked-in Revenue : $53,000"]
+        }
+    }
+}

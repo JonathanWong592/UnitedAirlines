@@ -1,0 +1,63 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    
+    margin: 0%;
+    padding: 0%;
+    /* margin: 0px; */
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container .btn:hover {
+    background-color: black;
+}
+
+.circle {
+    display: inline-block;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 5px;
+    background: red;
+    color: white;
+    text-align: center;
+    line-height: 1;
+    box-sizing: content-box;
+    white-space: nowrap;
+  }
+  .circle:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 100%;
+    height: 0;
+  }
+  .circle span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+
+/* Bottom left text */
+.transBox #p1{
+    display: inline-block;
+}
+
+#refresherButton{
+  position: absolute;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>More Kiosk Information</title>
+    
+</head>
+<body>
+    <!-- <p>hello</p> -->
+    <div class="container" id="pdfViewer">
+        <embed src="../PDFs/KioskData-part-2.pdf">
+    </div>
+    
+    <script type="text/javascript">
+        var data = '{{id|tojson}}'
+        data = JSON.parse(data)
+        var intData = Number(data)
+        //console.log(intData)
+        //var file = "../PDFs"
+        //console.log(file)
+        filename = "../PDFs/KioskData-part-" + intData + ".pdf"
+        console.log(filename)
+
+        var embed = document.createElement('embed');
+        //embed.setAttribute('width', w);
+        //embed.setAttribute('height', h);
+        embed.setAttribute('src', filename);
+        //embed.setAttribute('href', filename);
+        console.log(embed)
+        document.getElementById('pdfViewer').appendChild(embed)
+    </script>
+    
+</body>
+
+</html>
