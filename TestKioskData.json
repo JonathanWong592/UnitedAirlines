@@ -2,7 +2,7 @@
     "1": {
         "status": "Functional",
         "color": "Green",
-        "colorCode": "#00FF00",
+        "colorCode": "#00DD00",
         "Reasons": {
             "Status": ["Functional"],
             "Usage": ["Single Pax: 2,000", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
@@ -13,7 +13,7 @@
     "2": {
         "status": "Possibly Functional",
         "color": "Yellow",
-        "colorCode": "#FFFF00",
+        "colorCode": "#FF9900",
         "Reasons": {
             "Status": ["Possibly Functional"],
             "Usage": ["Multi-Pax: 795", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
@@ -24,7 +24,7 @@
     "3": {
         "status": "Non-Functional",
         "color": "Red",
-        "colorCode": "#FF0000",
+        "colorCode": "#DD0000",
         "Reasons": {
             "Status": ["Non-Functional"],
             "Usage": ["Single Pax: 2,000", "Multi-Pax: 795", "Passengers Total: 3765"],
@@ -35,7 +35,7 @@
     "4": {
         "status": "Functional",
         "color": "Green",
-        "colorCode": "#00FF00",
+        "colorCode": "#00DD00",
         "Reasons": {
             "Status": ["Functional"],
             "Usage": ["Single Pax: 2,000", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
@@ -46,7 +46,7 @@
     "5": {
         "status": "Possibly Functional",
         "color": "Yellow",
-        "colorCode": "#FFFF00",
+        "colorCode": "#FF9900",
         "Reasons": {
             "Status": ["Possibly Functional"],
             "Usage": ["Multi-Pax: 795", "Multi-Pax  transaction Pax Count Total:  1.834", "Passengers Total: 3765"],
