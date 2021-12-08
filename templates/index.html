@@ -210,9 +210,11 @@
             let el = document.getElementById('date')
             el.innerText = date;
 
-            let time = moment().format('h:m A')
-            let ele = document.getElementById('time')
-            ele.innerText = time
+            setInterval(function(){
+                let time = moment().format('h:mm A')
+                let ele = document.getElementById('time')
+                ele.innerText = time
+            }, 10000)
 
             let element = document.getElementById('demo-card')
             element.onclick = function () {
