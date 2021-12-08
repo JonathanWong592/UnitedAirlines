@@ -58,11 +58,11 @@
             p1.classList.add("transBox")
             p1.setAttribute("id", "p1")
             p1.type = "p"
-            tempStr += "<br />" + "<a style='font-size: .7em; position: absolute; bottom: 0.5em;' href='/more_info/" + clicked_id + "'>Read more<i style='font-size: 0.7em; margin-left: 0.5em' class='fa fa-angle-right'></i></a>"
+            tempStr = "<b>Status for Kiosk " + clicked_id + "</b><br />"
             for(i = 0; i < data[clicked_id]["Reasons"]["Status"].length; i++){
                 tempStr += "<br />" + data[clicked_id]["Reasons"]["Status"][i]
             }
-            tempStr += "<br />" + "<a href='/more_info/" + clicked_id + "'>More Kiosk Information</a>"
+            tempStr += "<br />" + "<a style='font-size: .7em; position: absolute; bottom: 0.5em;' href='/more_info/" + clicked_id + "'>Read more<i style='font-size: 0.7em; margin-left: 0.5em' class='fa fa-angle-right'></i></a>"
             p1.innerHTML = tempStr
             //p1.innerHTML = "Status for kiosk " + clicked_id + "<br />" + data[clicked_id]["Reasons"]["Status"]
             
